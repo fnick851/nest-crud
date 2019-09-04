@@ -1,8 +1,8 @@
-# nest.js CRUD API
+# nest.js CRUD app
 
 ## Features
 
-- CRUD web API
+- RESTful API
 
 - Validation and error handling
 
@@ -11,6 +11,8 @@
 - PostgreSQL and TypeORM
 
 - Logging
+
+- Testing
 
 ## Installation
 
