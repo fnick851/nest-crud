@@ -23,31 +23,31 @@ export class TasksController {
   constructor(private tasksService: TasksService) {}
 
   @Get()
-  getTasks(@Query(ValidationPipe) filterDto: GetTasksFilterDto) {
-    return this.tasksService.getTasks(filterDto);
+  async getTasks(@Query(ValidationPipe) filterDto: GetTasksFilterDto) {
+    return await this.tasksService.getTasks(filterDto);
   }
 
   @Get('/:id')
-  getTaskById(@Param('id', ParseIntPipe) id: number): Promise<Task> {
-    return this.tasksService.getTaskById(id);
+  async getTaskById(@Param('id', ParseIntPipe) id: number): Promise<Task> {
+    return await this.tasksService.getTaskById(id);
   }
 
   @Post()
   @UsePipes(ValidationPipe)
-  createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
-    return this.tasksService.createTask(createTaskDto);
+  async createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
+    return await this.tasksService.createTask(createTaskDto);
   }
 
   @Delete('/:id')
-  deleteTask(@Param('id', ParseIntPipe) id: number): Promise<void> {
-    return this.tasksService.deleteTaskById(id);
+  async deleteTask(@Param('id', ParseIntPipe) id: number): Promise<void> {
+    return await this.tasksService.deleteTaskById(id);
   }
 
   @Patch('/:id/status')
-  updateTAskStatus(
+  async updateTAskStatus(
     @Param('id', ParseIntPipe) id: number,
     @Body('status', TaskStatusValidationPipe) status: TaskStatus,
   ): Promise<Task> {
-    return this.tasksService.updateTaskStatus(id, status);
+    return await this.tasksService.updateTaskStatus(id, status);
   }
 }
