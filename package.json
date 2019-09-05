@@ -1,8 +1,13 @@
 {
   "name": "nest-crud",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "RESTful API built with NestJS",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fnick851/nest-crud.git"
+  },
+  "author": "Noah Hanlun Song",
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",
@@ -28,6 +33,7 @@
     "bcrypt": "^3.0.6",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.10.0",
+    "config": "^3.2.2",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "pg": "^7.12.1",
@@ -45,6 +51,7 @@
     "@types/bcrypt": "^3.0.0",
     "@types/passport-jwt": "^3.0.1",
     "@types/uuid": "^3.4.5",
+    "@types/config": "0.0.34",
     "jest": "24.7.1",
     "prettier": "1.17.0",
     "supertest": "4.0.2",
